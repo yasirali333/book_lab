@@ -16,3 +16,21 @@ module.exports = {
   },
   plugins: [],
 }
+
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        spin: 'rotate 1s linear infinite',
+      },
+    },
+  },
+  variants: {},
+  plugins: [],
+};

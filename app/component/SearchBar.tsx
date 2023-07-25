@@ -38,7 +38,7 @@ export default function SearchBar() {
     <Box sx={{backgroundColor:'#EFEFEF' ,width:'900px' ,
      height:'60px' ,gap:'15',borderRadius:'100px', display: 'flex',
      alignItems: 'center', flexShrink:'0'
-   }}>
+   }} className='srcBar'>
        <SearchIcon sx={{py:'7px' , pl:'7px' , width:'35px' ,height:'35px' , gap:'10px' }}/>
          {/* <Box sx={{
             color: '#555',
