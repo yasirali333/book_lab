@@ -54,7 +54,7 @@ export default function Home() {
     <Box sx={{display:'flex' ,flexDirection:'row' ,pt:'8px'}}>
     <Box sx={{backgroundColor:'#004D6D' , width:'692px',
      height:'360px'}} className='text-box'>
-      <Box sx={{ width:'217px',height: '92px',flexShrink: '0px' , 
+      <Box sx={{ width:'380px',height: '92px',flexShrink: '0px' , 
       pt:'90px',pr:'50px',pl:'80px'}}  className='text1'>
          <Typography  variant="myVariant1" className="font">
            Lorem ipsum dolor sit amet consectetur.
