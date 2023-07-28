@@ -1,6 +1,24 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import Error from 'next/error';
+
+import type { PayloadAction } from "@reduxjs/toolkit";
+export interface Book {
+  length(length: any): unknown;
+  author: string;
+  country: string;
+  language: string;
+  pages: number;
+  link: string;
+  imageLink: string;
+  title: string;
+  price: number;
+  rating: number;
+  reviews: string[];
+  is_liked: boolean;
+  year: number;
+
+}
+
 
 export const fetchData = createAsyncThunk(
   'data/fetchData',
@@ -15,15 +33,33 @@ export const fetchData = createAsyncThunk(
     return data;
   }
 );
+export interface CounterState {
+  loading: boolean;
+  error: any; // Replace 'any' with the appropriate error type if available
+  data: Book[] | null;
+  searchedBook: Book[];
+  books: Book[];
+}
 
 const counterSlice= createSlice({
   name: 'data',
   initialState: {
+    books: [],
     loading: false,
     error: null,
     data: null  ,
+    searchedBook: [],
+  }as CounterState,
+  reducers: {
+    handleSearchedBooks: (state, action: PayloadAction<Book[]>) => {
+      // state.searchedBook = [];
+      // state.searchedBook = action.payload;
+      state.searchedBook = [...action.payload];
+    },
+    handleRemoveSearchedBooks: (state) => {
+      state.searchedBook = [];
+    },
   },
-  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.pending, (state) => {
@@ -41,5 +77,7 @@ const counterSlice= createSlice({
       });
   },
 });
+export const { handleSearchedBooks, handleRemoveSearchedBooks } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

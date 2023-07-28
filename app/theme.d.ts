@@ -8,6 +8,12 @@ declare module '@mui/material/styles' {
         myVariant2: React.CSSProperties;
         myVariant3: React.CSSProperties;
         myVariant4: React.CSSProperties;
+        myVariant5: React.CSSProperties;
+        myVariant6: React.CSSProperties;
+        myVariant7: React.CSSProperties;
+        myVariant8: React.CSSProperties;
+        myVariant9: React.CSSProperties;
+        myVariant10: React.CSSProperties;
       }
     
       // allow configuration using `createTheme`
@@ -16,6 +22,12 @@ declare module '@mui/material/styles' {
         myVariant2?: React.CSSProperties;
         myVariant3?: React.CSSProperties;
         myVariant4?: React.CSSProperties;
+        myVariant5?: React.CSSProperties;
+        myVariant6?: React.CSSProperties;
+        myVariant7?: React.CSSProperties;
+        myVariant8?: React.CSSProperties;
+        myVariant9?: React.CSSProperties;
+        myVariant10?: React.CSSProperties;
       }
   }
   
@@ -27,5 +39,11 @@ declare module '@mui/material/Typography' {
       myVariant2: true;
       myVariant3: true;
       myVariant4: true;
+      myVariant5: true;
+      myVariant6: true;
+      myVariant7: true;
+      myVariant8: true;
+      myVariant9: true;
+      myVariant10: true;
     }
   }
