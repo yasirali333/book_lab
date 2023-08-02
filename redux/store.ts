@@ -15,13 +15,17 @@ export const store = configureStore({
 });
 
 export type RootState = {
+  books: any;
+  data: any;
   counter: {
     books: Book[],
     loading: boolean;
     error: any;
-    data: Book[] | null;
-    searchedBook: Book[];
+    data: Book[] | [];
+    filteredBook: Book[];
   };
   // Other slices if you have more in your application
 };
 export type AppDispatch = typeof store.dispatch;
+
+

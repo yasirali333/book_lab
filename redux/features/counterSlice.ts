@@ -36,28 +36,26 @@ export const fetchData = createAsyncThunk(
 export interface CounterState {
   loading: boolean;
   error: any; // Replace 'any' with the appropriate error type if available
-  data: Book[] | null;
-  searchedBook: Book[];
-  books: Book[];
+  // data: Book[] ;
+  filteredBook: Book[];
+  data: Book[];
 }
 
 const counterSlice= createSlice({
   name: 'data',
   initialState: {
-    books: [],
+    data: [],
     loading: false,
     error: null,
-    data: null  ,
-    searchedBook: [],
+    filteredBook: [],
   }as CounterState,
   reducers: {
-    handleSearchedBooks: (state, action: PayloadAction<Book[]>) => {
-      // state.searchedBook = [];
-      // state.searchedBook = action.payload;
-      state.searchedBook = [...action.payload];
+    handlefilteredBooks: (state, action: PayloadAction<Book[]>) => {
+      state.filteredBook = [];
+      state.filteredBook = [...action.payload];
     },
-    handleRemoveSearchedBooks: (state) => {
-      state.searchedBook = [];
+    handleRemovefilteredBooks: (state) => {
+      state.filteredBook = [];
     },
   },
   extraReducers: (builder) => {
@@ -65,11 +63,11 @@ const counterSlice= createSlice({
       .addCase(fetchData.pending, (state) => {
         state.loading = true;
         state.error = null;
-        state.data = null;
+        state.data = [];
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.data = action.payload; // Set the fetched data to the data state
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.loading = false;
@@ -77,7 +75,8 @@ const counterSlice= createSlice({
       });
   },
 });
-export const { handleSearchedBooks, handleRemoveSearchedBooks } =
+export const { handlefilteredBooks, handleRemovefilteredBooks } =
   counterSlice.actions;
 
 export default counterSlice.reducer;
+

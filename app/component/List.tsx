@@ -10,7 +10,7 @@ import { useState , useEffect } from "react";
 //redux
 import { useGetUsersQuery } from "@/redux/services/userApi";
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import {fetchData} from '@/redux/features/counterSlice';
+import {fetchData } from '@/redux/features/counterSlice';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Loading from "../Loading";
@@ -93,19 +93,27 @@ export default function List() {
   const changeData = (book: Book) => {
     setSelectBook(book);
   };
-  const { books, searchedBook, loading } = useAppSelector(
-    (state) => state.counter
-  );
-  console.log(books);
-  const dispatch = useAppDispatch();
+  // const { filteredBook, loading } = useAppSelector(
+  //   (state) => state.counter
+  // );
+  
+  // const dispatch = useAppDispatch();
 
+   const { data, isFetching  , isLoading } = useGetUsersQuery('/books');
+    console.log(data);
+    // const dispatch = useAppDispatch();
+    // const { data,  loading } = useAppSelector((state) => state.counter);
+    // console.log(data);
+    // const searhedBook = useAppSelector((state) => (state.counter.filteredBook.length > 0 ? state.counter.filteredBook : data?.data?.stats));
+    const {filteredBook , loading  } = useAppSelector(
+      (state) => state.counter
+    );
+    const dispatch = useAppDispatch();
+    console.log('search in list' ,filteredBook);
   useEffect(() => {
     dispatch(fetchData({ apiKey:`#b0@6hX8YasCq6^unOaPw1tqR` , url: 'https://books-list-api.vercel.app' }));
   }, [dispatch]);
-
-    const { data, isFetching , error , isLoading } = useGetUsersQuery('/books');
-    const searhedBook = useAppSelector((state) => (state.counter.searchedBook.length > 0 ? state.counter.searchedBook : data?.data?.stats));
-    if (isFetching || isLoading) return( 
+    if ( isFetching || isLoading) return( 
     <Box sx={{width:'100px' , height:'100px' , pt:'80px' , pl:'640px'}}>
       
       <Loading/>
@@ -121,9 +129,72 @@ export default function List() {
     <ThemeProvider theme={theme}>
     <Box>
         {selectBook && <Popup selectBook={selectBook} onClose={() => setSelectBook(null)} />}
+{/* strt */}
+{filteredBook && filteredBook.length > 0 ? (
+     <Box sx={{width:'full' , height:'full',display:'flex' ,
+     flexWrap:'wrap'}} > 
+       { filteredBook.map((book:any) => {
+          return  <div
+          key={book.title}> 
+       
+          <Box  sx={{width:'300px' , pt:'50px' , pl:{sm:'160px',md:'105px' , xl:'160px'} , gap:'60px', 
+           }} onClick={() => changeData(book)} >
+ 
 
-
-        {data.data?.length ? (
+         <Card sx={{width:'300px' ,height:'550px' , border:'0px' , boxShadow:'none'  }}>
+        <CardMedia >
+        
+            <div className="image-container">
+          
+            <img src={book.imageLink} alt={book.title} width={300} height={390}
+            style={{ borderRadius: '15px' }}/>
+             <div className="icon" >
+              <div className='is_liked'>
+             {book.is_liked ? <FavoriteIcon sx={{mt:'9px',ml:'7px', color:'red' , width:'32px' , height:'28px'}}/> : <FavoriteBorderIcon sx={{mt:'9px',ml:'7px', color:'red' , width:'32px' , height:'28px'}}/>}
+             </div>
+            </div>
+            </div>
+   
+        </CardMedia>
+        <CardContent sx={{pl:'2px'}}>
+          <Typography gutterBottom variant='myVariant3'  >
+           {book.title}
+          </Typography>
+          <Stack>
+          <Rating sx={{mt:'10px' , mb:'10px'}}
+           name="simple-controlled"
+           value={book.rating}
+   precision={0.5}
+   size='large'
+/>
+          </Stack>
+          
+        <Typography variant='myVariant4'>
+              
+               ${book.price}
+              
+               </Typography>
+        </CardContent>
+        <CardActions>
+      
+        </CardActions>
+      </Card>
+      
+      
+      </Box>
+     
+           </div>;
+        })
+      }
+       </Box>
+        
+      ) : loading ? (
+        <Box sx={{width:'100px' , height:'100px' , pt:'80px' , pl:'640px'}}>
+        <Loading/>
+        </Box>
+      ) : (
+        <div>
+        {data.data.length ? (
     <Box sx={{width:'full' , height:'full',display:'flex' ,position:'relative',
       flexWrap:'wrap'}} > 
     {/* <h3>{data.data[0].title}</h3> */}
@@ -190,7 +261,11 @@ export default function List() {
     </Box>
   ): (
     <Typography variant="h6">No books found.</Typography>
-  )}
+  )} 
+  </div>
+      )}
+{/* end */}
+
     </Box>
   
     </ThemeProvider>
