@@ -147,39 +147,57 @@
 
  
 @media screen and (max-width: 1100px ) {
-  .popup-img{
-   width: 531px;
-   height:450px;
-  }
- }
- @media screen and (max-width: 900px ) {
-  .popup-img{
-   width: 380px;
-   height:180px;
-  }
- }
-@media screen and (max-width: 680px ) {
- .popup-img{
-  width: 320px;
-  height:155px;
- }
-}
- 
-@media screen and (max-width: 1100px ) {
   .popup-box{
-   width: 531px;
-   height:450px;
+   width: 670px;
+   height:520px;
   }
  }
  @media screen and (max-width: 900px ) {
   .popup-box{
    width: 380px;
-   height:180px;
+   height:390px;
   }
  }
 @media screen and (max-width: 680px ) {
  .popup-box{
-  width: 320px;
-  height:155px;
+  width: 380px;
+  height:390px;
+ }
+}
+ 
+@media screen and (max-width: 1100px ) {
+  .popup-img{
+   width:360px;
+   height:520px;
+  }
+ }
+ @media screen and (max-width: 900px ) {
+  .popup-img{
+   width: 195px;
+   height:390px;
+  }
+ }
+@media screen and (max-width: 680px ) {
+ .popup-img{
+  width: 195px;
+   height:390px;
+ }
+}
+@media screen and (max-width: 1100px ) {
+  .popup-detail{
+   width:310px;
+   height:520px;
+  }
+ }
+ @media screen and (max-width: 900px ) {
+  .popup-detail{
+   width: 155px;
+   height:390px;
+  }
+ }
+@media screen and (max-width: 680px ) {
+ .popup-detail{
+  width: 155px;
+  height:390px;
  }
 }
