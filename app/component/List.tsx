@@ -229,11 +229,11 @@ export default function List() {
                     flexWrap: "wrap",
                   }}
                 >
-                  {/* <h3>{data.data[0].title}</h3> */}
+            
 
                   {data.data.map((book: any) => (
                     <div key={book.title}>
-                      {/* <h4>{book.title}</h4> */}
+                    
                       <Box
                         sx={{
                           width: "300px",

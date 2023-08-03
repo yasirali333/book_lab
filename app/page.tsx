@@ -1,8 +1,8 @@
 "use client";
 import NavBar from "./component/NavBar";
-import Box from "@mui/material/Box/Box";
+import {Box} from "@mui/material";
 import Image from "next/image";
-import { useTheme, createTheme, ThemeProvider } from "@mui/material/styles";
+import {  createTheme, ThemeProvider } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import List from "./component/List";
 
@@ -82,7 +82,6 @@ export default function Home() {
               width={690}
               height={360}
 
-              // Adjust the max-width values for different breakpoints
             />
           </Box>
         </Box>

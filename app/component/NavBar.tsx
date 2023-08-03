@@ -1,4 +1,4 @@
-"use client";
+
 import SearchBar from "./SearchBar";
 import Image from "next/image";
 import { Box } from "@mui/material";
