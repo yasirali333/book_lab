@@ -17,13 +17,13 @@ export default function NavBar() {
       className="navBar"
     >
       <div>
-        <Image src={"/logo1.gif"} alt="logo" width={60} height={60} />
+        <Image src={"/logo1.GIF"} alt="logo" width={60} height={60} />
       </div>
       <div>
         <SearchBar />
       </div>
       <div>
-        <Image src={"/dp.gif"} alt="dp" width={60} height={60} />
+        <Image src={"/dp.GIF"} alt="dp" width={60} height={60} />
       </div>
     </Box>
   );
