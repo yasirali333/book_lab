@@ -106,7 +106,7 @@ export default function List() {
           pl: { sm: "290px", lg: "640px" },
         }}
       >
-        <Loading />
+        {/* <Loading /> */}
       </Box>
     );
 
