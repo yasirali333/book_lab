@@ -1,5 +1,4 @@
-
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import type { PayloadAction } from "@reduxjs/toolkit";
 export interface Book {
@@ -16,16 +15,14 @@ export interface Book {
   reviews: string[];
   is_liked: boolean;
   year: number;
-
 }
 
-
 export const fetchData = createAsyncThunk(
-  'data/fetchData',
-  async ({ apiKey, url }:any) => {
+  "data/fetchData",
+  async ({ apiKey, url }: any) => {
     const response = await fetch(url, {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
     });
@@ -35,20 +32,19 @@ export const fetchData = createAsyncThunk(
 );
 export interface CounterState {
   loading: boolean;
-  error: any; // Replace 'any' with the appropriate error type if available
-  // data: Book[] ;
+  error: any; 
   filteredBook: Book[];
   data: Book[];
 }
 
-const counterSlice= createSlice({
-  name: 'data',
+const counterSlice = createSlice({
+  name: "data",
   initialState: {
     data: [],
     loading: false,
     error: null,
     filteredBook: [],
-  }as CounterState,
+  } as CounterState,
   reducers: {
     handlefilteredBooks: (state, action: PayloadAction<Book[]>) => {
       state.filteredBook = [];
@@ -67,9 +63,9 @@ const counterSlice= createSlice({
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload; // Set the fetched data to the data state
+        state.data = action.payload; 
       })
-      .addCase(fetchData.rejected, (state, action) => {
+      .addCase(fetchData.rejected, (state) => {
         state.loading = false;
         state.error = null;
       });
@@ -79,4 +75,3 @@ export const { handlefilteredBooks, handleRemovefilteredBooks } =
   counterSlice.actions;
 
 export default counterSlice.reducer;
-

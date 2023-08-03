@@ -24,7 +24,7 @@ export type RootState = {
     data: Book[] | [];
     filteredBook: Book[];
   };
-  // Other slices if you have more in your application
+ 
 };
 export type AppDispatch = typeof store.dispatch;
 
