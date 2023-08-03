@@ -17,7 +17,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { fetchData } from "@/redux/features/counterSlice";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-// import Loading from "../";
+import Loading from "../Loading";
 import Popup from "./Popup";
 
 interface Book {
