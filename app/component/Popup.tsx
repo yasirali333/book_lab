@@ -27,54 +27,54 @@ const theme = createTheme({
     // fontSize:20,
     myVariant5: {
       color: "black",
-      fontSize: "24px",
+      fontSize: "1.8rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "600",
-      lineHeight: "39px",
+      lineHeight: "1.2rem",
       textTransform: "capitalize",
     },
     myVariant6: {
       color: "black",
-      fontSize: "18px",
+      fontSize: "1.2rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "500",
-      lineHeight: "30px",
+      lineHeight: "1.9rem",
       textTransform: "capitalize",
     },
 
     myVariant7: {
       color: "black",
-      fontSize: "24px",
+      fontSize: "1.8rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "600",
-      lineHeight: "24px",
+      lineHeight: "1.8rem",
     },
     myVariant8: {
       color: "#000000",
-      fontSize: "14px",
+      fontSize: ".9rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "400",
-      lineHeight: "24px",
+      lineHeight: "1.8rem",
     },
     myVariant9: {
       color: " #B2B2B2",
-      fontSize: "11px",
+      fontSize: ".7rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "400",
-      lineHeight: "24px",
+      lineHeight: "1.8rem",
     },
     myVariant10: {
       color: "white",
-      fontSize: "13px",
+      fontSize: ".8rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "600",
-      lineHeight: "24px",
+      lineHeight: "1.8rem",
       textTransform: "capitalize",
     },
   },
@@ -115,7 +115,7 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
       <Box
         sx={{
           position: "absolute",
-          height: { sm: "60000px", lg: "40500px" },
+          height: { sm: "3750rem", lg: "2531rem" },
           left: 0,
           right: 0,
           top: 0,
@@ -131,15 +131,15 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
         <Box
           sx={{
             position: "fixed",
-            width: "670px",
-            height: "520px",
+            width: "41.86rem",
+            height: "32.5rem",
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
             color: "black",
             bgcolor: "white",
-            borderRadius: "15px",
-            m: "0px",
+            borderRadius: ".93rem",
+            m: "0re",
             zIndex: "9999",
             display: "flex",
             flexDirection: "row",
@@ -148,8 +148,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
         >
           <Box
             sx={{
-              width: { sm: "180px", lg: "360px" },
-              height: { sm: "260px", lg: "520px" },
+              width: { sm: "11.25rem", lg: "22.25rem" },
+              height: { sm: "16.25rem", lg: "32.5rem" },
             }}
           >
             <img
@@ -158,57 +158,58 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
               width={360}
               height={520}
               style={{
-                borderTopLeftRadius: "15px",
-                borderBottomLeftRadius: "15px",
+                borderTopLeftRadius: ".93rem",
+                borderBottomLeftRadius: ".93rem",
               }}
               className="popup-img"
             />
           </Box>
           <Box
             sx={{
-              width: { sm: "155px", lg: "310px" },
-              height: { sm: "260px", lg: "520px" },
+              width: { sm: "8.68rem", lg: "19.37rem" },
+              height: { sm: "16.25rem", lg: "32.5rem" },
             }}
             className="popup-detail"
           >
             <Box
               sx={{
-                mt: { sm: "15px", md: "15px", lg: "30px" },
-                ml: { sm: "20px", md: "200px", lg: "20px" },
+                mt: { sm: ".93rem", md: ".93rem", lg: "1.9rem" },
+                ml: { sm: "0rem", md: "6.5rem", lg: "1.25rem" },
               }}
+              className="only-popup"
             >
               <Typography
                 variant="myVariant5"
-                sx={{ fontSize: { sm: "16px", md: "16px", lg: "24px" } }}
+                sx={{ fontSize: { sm: "1rem", md: "1.3rem", lg: "1.8rem" } }}
               >
                 {selectBook.title}
               </Typography>
             </Box>
             <Box
               sx={{
-                mt: { sm: "0px", md: "0px", lg: "15px" },
-                ml: { sm: "25px", md: "200px", lg: "25px" },
+                mt: { sm: "0rem", md: "0rem", lg: ".93rem" },
+                ml: { sm: "1.56rem", md: "6.5rem", lg: "1.56rem" },
                 display: "flex",
                 flexDirection: "row",
-                gap: { sm: "16px", md: "16px", lg: "45px" },
-              }}
+                gap: { sm: "1rem", md: "1rem", lg: "2.8rem" },
+              }}className="only-popup"
             >
               <Box
                 sx={{
-                  width: { sm: "40px", md: "40px", lg: "58px" },
-                  height: { sm: "7px", md: "7px", lg: "12px" },
+                  width: { sm: "2.5rem", md: "2.5rem", lg: "3.62rem" },
+                  height: { sm: ".6rem", md: ".6rem", lg: ".75rem" },
                 }}
               >
                 <Typography
                   variant="myVariant6"
-                  sx={{ fontSize: { sm: "14px", md: "14px", lg: "18px" } }}
+                  sx={{ fontSize: { sm: ".9rem", md: ".9rem", lg: "1.2rem" } }}
                 >
                   Rating
                 </Typography>
                 <br />
                 <Rating
                   name="simple-controlled"
-                  sx={{ fontSize: { sm: "8px", md: "8px", lg: "10px" } }}
+                  sx={{ fontSize: { sm: ".5rem", md: ".5rem", lg: ".65rem" } }}
                   value={selectBook.rating}
                   precision={0.5}
                 />
@@ -216,7 +217,7 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
               <Box>
                 <Typography
                   variant="myVariant6"
-                  sx={{ fontSize: { sm: "14px", md: "14px", lg: "18px" } }}
+                  sx={{ fontSize: { sm: ".9rem", md: ".9rem", lg: "1.2rem" } }}
                 >
                   Reviews
                 </Typography>
@@ -224,8 +225,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant9"
                   sx={{
-                    ml: { sm: "11px", md: "11px", lg: "19px" },
-                    fontSize: { sm: "9px", md: "9px", lg: "11px" },
+                    ml: { sm: ".7rem", md: ".7rem", lg: "1.18rem" },
+                    fontSize: { sm: ".56rem", md: ".56rem", lg: ".7rem" },
                   }}
                 >
                   ({selectBook.reviews})
@@ -234,7 +235,7 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
               <Box>
                 <Typography
                   variant="myVariant6"
-                  sx={{ fontSize: { sm: "14px", md: "14px", lg: "18px" } }}
+                  sx={{ fontSize: { sm: ".9rem", md: ".9rem", lg: "1.2rem" } }}
                 >
                   Price
                 </Typography>
@@ -242,8 +243,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant9"
                   sx={{
-                    ml: { sm: "7px", md: "7px", lg: "13px" },
-                    fontSize: { sm: "9px", md: "9px", lg: "11px" },
+                    ml: { sm: ".43rem", md: ".43rem", lg: ".9rem" },
+                    fontSize: { sm: ".56rem", md: ".56rem", lg: ".7rem" },
                   }}
                 >
                   ${selectBook.price}{" "}
@@ -252,21 +253,21 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
             </Box>
             <Box
               sx={{
-                width: { sm: "210px", md: "210px", lg: "280px" },
-                height: { sm: "109px", md: "109px", lg: "146px" },
-                mt: { sm: "0px", md: "0px", lg: "12px" },
-                ml: { sm: "20px", md: "200px", lg: "20px" },
-                gap: "5px",
+                width: { sm: "13.12rem", md: "13.12rem", lg: "17.5rem" },
+                height: { sm: "6.8rem", md: "6.8rem", lg: "9.12rem" },
+                mt: { sm: "0rem", md: "0rem", lg: ".75rem" },
+                ml: { sm: "1.25rem", md: "6.5rem", lg: "1.25rem" },
+                gap: ".31rem",
                 display: "flex",
                 flexDirection: "column",
-              }}
+              }}className="only-popup"
             >
               <Box>
                 <Typography
                   variant="myVariant7"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "12px", md: "12px", lg: "18px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".75rem", md: ".75rem", lg: "1.2rem" },
                   }}
                 >
                   Athure:
@@ -274,8 +275,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant8"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "11px", md: "11px", lg: "16px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".7rem", md: ".7rem", lg: "1rem" },
                   }}
                 >
                   {selectBook.author}
@@ -285,8 +286,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant7"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "12px", md: "12px", lg: "18px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".75rem", md: ".75rem", lg: "1.2rem" },
                   }}
                 >
                   Country:
@@ -294,8 +295,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant8"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "11px", md: "11px", lg: "16px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".7rem", md: ".7rem", lg: "1rem" },
                   }}
                 >
                   {selectBook.country}
@@ -305,8 +306,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant7"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "12px", md: "12px", lg: "18px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".75rem", md: ".75rem", lg: "1.2rem" },
                   }}
                 >
                   Language:
@@ -314,8 +315,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant8"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "11px", md: "11px", lg: "16px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".7rem", md: ".7rem", lg: "1rem" },
                   }}
                 >
                   {selectBook.language}
@@ -325,8 +326,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant7"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "12px", md: "12px", lg: "16px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".75rem", md: ".75rem", lg: "1rem" },
                   }}
                 >
                   Year:
@@ -334,8 +335,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant8"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "11px", md: "11px", lg: "18px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".7rem", md: ".7rem", lg: "1.2rem" },
                   }}
                 >
                   {selectBook.year}
@@ -345,8 +346,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant7"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "12px", md: "12px", lg: "16px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".75rem", md: ".75rem", lg: "1rem" },
                   }}
                 >
                   Pages:
@@ -354,8 +355,8 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
                 <Typography
                   variant="myVariant8"
                   sx={{
-                    lineHeight: { sm: "16px", md: "16px", lg: "24px" },
-                    fontSize: { sm: "11px", md: "11px", lg: "18px" },
+                    lineHeight: { sm: "1rem", md: "1rem", lg: "1.8rem" },
+                    fontSize: { sm: ".7rem", md: ".7rem", lg: "1.2rem" },
                   }}
                 >
                   {selectBook.pages}
@@ -363,16 +364,16 @@ const Popup: React.FC<PopupProps> = ({ selectBook, onClose }) => {
               </Box>
             </Box>
             <Box
-              sx={{ ml: { sm: "20px", md: "200px", lg: "20px" }, mt: "13px" }}
-              onClick={handleLinkWrapperClick}
+              sx={{ ml: { sm: "1.8rem", md: "6.5rem", lg: "1.4rem" }, mt: "2rem" }}
+              onClick={handleLinkWrapperClick} className="only-popup"
             >
               <Link href={selectBook.link}>
                 <Button
                   variant="contained"
                   sx={{
                     backgroundColor: "#004D6D",
-                    width: { sm: "175px", md: "175px", lg: "270px" },
-                    height: { sm: "30px", md: "30px", lg: "35px" },
+                    width: { sm: "10.9rem", md: "10.9rem", lg: "16.8rem" },
+                    height: { sm: "1.9rem", md: "1.9rem", lg: "2.3rem" },
                     color: "white",
                   }}
                   endIcon={<OpenInNewRoundedIcon />}

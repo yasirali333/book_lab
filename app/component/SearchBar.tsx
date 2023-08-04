@@ -63,7 +63,7 @@ const SearchBar = () => {
       <Box
         sx={{
           backgroundColor: "#EFEFEF",
-          width: "900px",
+          width: "70vw",
           height: "60px",
           gap: "15",
           borderRadius: "100px",
@@ -97,6 +97,7 @@ const SearchBar = () => {
           style={{
             backgroundColor: "#EFEFEF",
             border: "none",
+            outline:'none',
             paddingBottom: "4px",
           }}
           onChange={(e) => setSearch(e.target.value)}

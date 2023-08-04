@@ -10,7 +10,7 @@ const theme = createTheme({
   typography: {
     myVariant1: {
       color: "#FFF",
-      fontSize: "20px",
+      fontSize: "2.5rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
       fontWeight: "600",
@@ -19,10 +19,10 @@ const theme = createTheme({
     },
     myVariant2: {
       color: "#FFF",
-      fontSize: "20px",
+      fontSize: "2.5rem",
       fontFamily: "Sans-Serif",
       fontStyle: "normal",
-      fontWeight: "400",
+      fontWeight: "300",
       lineHeight: "{sx:7 , sm:13 , md:22 , lg:30 , xl:39}",
       textTransform: "capitalize",
     },
@@ -36,52 +36,51 @@ export default function Home() {
         <div>
           <NavBar />
         </div>
-        <Box sx={{ display: "flex", flexDirection: "row", pt: "8px" }}>
+        <Box sx={{ display: "flex", flexDirection: 'row', pt: "8px" , width:'100%' , height:'28.1rem' }} className='conatainer'>
           <Box
-            sx={{ backgroundColor: "#004D6D", width: "692px", height: "360px" }}
+            sx={{ backgroundColor: "#004D6D", width: "50%", height: "28.1rem" }}
             className="text-box"
           >
+           
             <Box
               sx={{
-                width: "380px",
-                height: "92px",
+                width: "70%",
+                height: "28.1",
                 flexShrink: "0px",
-                pt: "90px",
-                pr: "50px",
-                pl: "80px",
+                marginLeft: "8%",
+                marginTop: "7%",
               }}
-              className="text1"
+            
             >
-              <Typography variant="myVariant1" className="font">
+              <Typography variant="myVariant1"  className="text1">
                 Lorem ipsum dolor sit amet consectetur.
               </Typography>
             </Box>
 
             <Box
               sx={{
-                width: "217px",
-                height: "86px",
+                width: "65%",
+                height: "30%",
                 flexShrink: "0",
-                pb: "40px",
-                pr: "50px",
-                pl: "80px",
-                pt: "15px",
+                marginLeft: "9%",
+                marginTop: "7%",
+                
               }}
-              className="text2"
+              
             >
-              <Typography variant="myVariant2" className="font">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <Typography variant="myVariant2"  className="text1">
+                Lorem ipsum dolor sit amet consectetur. Viverr Scelerisqu.
               </Typography>
             </Box>
+       
           </Box>
-          <Box>
+          <Box >
             <Image
               className="img1"
               src={"/img1.png"}
               alt="img1"
-              width={690}
-              height={360}
-
+              width={944}
+              height={450}
             />
           </Box>
         </Box>

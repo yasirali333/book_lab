@@ -8,11 +8,11 @@ export default function NavBar() {
       sx={{
         backgroundColor: "#FFF",
         display: "flex",
-        width: "1200px",
-        paddingLeft: "65px",
+        width: "100%",
+        paddingLeft: ".1rem",
         justifyContent: "center",
         alignItems: "center",
-        gap: "90px",
+        gap: "7%",
       }}
       className="navBar"
     >
